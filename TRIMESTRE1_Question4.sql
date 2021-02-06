@@ -1,7 +1,8 @@
-alter table etudiant add password varchar(50);
+alter table Etudiant add password varchar(50);
 
-update etudiant set password = ora_hash(matricule) where matricule = valeur;
+update Etudiant set password = ora_hash(matricule) where matricule=&matricule;
+--SELECT courCodeCours FROM Etudiantdeclasse WHERE etudiantMatricule=&matricule;
 
 alter table enseignants add password varchar(50);
 
-update enseignants set password = ora_hash(matricule) where matricule = valeur;
+update enseignants set password = ora_hash(matricule) where matricule =&matricule;
